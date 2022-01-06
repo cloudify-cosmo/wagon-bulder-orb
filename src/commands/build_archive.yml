@@ -3,7 +3,7 @@ description: >
 steps:
   - attach_workspace:
       at: workspace
-  run:
+  - run:
     name: Set Python
     command: |
       if ! pyenv -v COMMAND &> /dev/null
