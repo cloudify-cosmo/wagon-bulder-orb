@@ -4,13 +4,23 @@ steps:
   - attach_workspace:
       at: workspace
   - run:
+      name: Set Python
+      command: |
+        if ! pyenv -v COMMAND &> /dev/null
+        then
+            echo "pyenv could not be found"
+            exit
+        else
+            pyenv global 3.6.5
+        fi
+  - run:
       name: Create Workspace Build directory.
       command: mkdir -p workspace/build
   - run:
       name: Build Bundle
       command: |
           git clone https://github.com/cloudify-incubator/cloudify-ecosystem-test.git
-          pip install -e cloudify-ecosystem-test
+          pip3 install -e cloudify-ecosystem-test
           python -c 'from ecosystem_cicd_tools import packaging; packaging.build_plugins_bundle_with_workspace()'
   - persist_to_workspace:
       root: workspace
