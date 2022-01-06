@@ -16,3 +16,4 @@ steps:
       root: workspace
       paths:
         - build/*
+        -

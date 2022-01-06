@@ -14,8 +14,8 @@ steps:
           docker build -t cloudify-wagon-builder-centos cloudify-wagon-build-containers/centos_7_py3
           docker run -v ~/project/:/packaging cloudify-wagon-builder-centos
   - run:
-          name: copy wagon to workspace
-          command: cp *.wgn workspace/build/
+      name: copy wagon to workspace
+      command: cp *.wgn workspace/build/
   - persist_to_workspace:
       root: workspace
       paths:
