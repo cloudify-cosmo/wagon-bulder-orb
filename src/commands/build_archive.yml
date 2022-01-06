@@ -1,5 +1,5 @@
 description: >
-  This command Builds a Bundle
+  This command builds a bundle
 steps:
   - attach_workspace:
       at: workspace
