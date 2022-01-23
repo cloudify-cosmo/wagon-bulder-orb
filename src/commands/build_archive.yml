@@ -19,9 +19,10 @@ steps:
   - run:
       name: Build Bundle
       command: |
-          git clone https://github.com/cloudify-incubator/cloudify-ecosystem-test.git
-          pip3 install -e cloudify-ecosystem-test
-          python -c 'from ecosystem_cicd_tools import packaging; packaging.build_plugins_bundle_with_workspace()'
+        git clone https://github.com/cloudify-incubator/cloudify-ecosystem-test.git
+        pip3 install -e cloudify-ecosystem-test
+        python -c 'from ecosystem_cicd_tools import packaging; packaging.build_plugins_bundle_with_workspace()'
+        python -c 'from ecosystem_cicd_tools import packaging; packaging.build_plugins_bundle_with_workspace(v2_bundle=True)'
   - persist_to_workspace:
       root: workspace
       paths:
