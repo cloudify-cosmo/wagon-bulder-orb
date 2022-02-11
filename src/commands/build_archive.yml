@@ -4,6 +4,9 @@ steps:
   - attach_workspace:
       at: workspace
   - run:
+      name: Git checkout
+      command: git checkout ${CIRCLE_BRANCH}
+  - run:
       name: Set Python
       command: |
         if ! pyenv -v COMMAND &> /dev/null
