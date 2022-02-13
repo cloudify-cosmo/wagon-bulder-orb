@@ -22,13 +22,13 @@ steps:
   - run:
       name: Check if plugin.yaml exist and if so, copy it to workspace
       command:
-      if [ -f "plugin.yaml" ]; 
-      then
-          echo "Plugin YAML exists"
-          cp plugin.yaml workspace/build/plugin.yaml
-      else:
-          echo "Plugin YAML does not exist"
-      fi
+        if [ -f "plugin.yaml" ]; 
+        then
+            echo "Plugin YAML exists"
+            cp plugin.yaml workspace/build/plugin.yaml
+        else:
+            echo "Plugin YAML does not exist"
+        fi
   - run:
       name: Build Bundle
       command: |
