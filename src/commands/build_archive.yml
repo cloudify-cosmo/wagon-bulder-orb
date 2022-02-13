@@ -20,6 +20,16 @@ steps:
       name: Create Workspace Build directory.
       command: mkdir -p workspace/build
   - run:
+      name: Check if plugin.yaml exist and if so, copy it to workspace
+      command:
+      if [ -f "plugin.yaml" ]; 
+      then
+          echo "Plugin YAML exists"
+          cp plugin.yaml workspace/build/plugin.yaml
+      else:
+          echo "Plugin YAML does not exist"
+      fi
+  - run:
       name: Build Bundle
       command: |
         git clone https://github.com/cloudify-incubator/cloudify-ecosystem-test.git
