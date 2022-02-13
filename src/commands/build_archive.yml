@@ -21,8 +21,8 @@ steps:
       command: mkdir -p workspace/build
   - run:
       name: Check if plugin.yaml exist and if so, copy it to workspace
-      command:
-        if [ -f "plugin.yaml" ];
+      command: |
+        if [[ -f "plugin.yaml" ]];
         then
             echo "Plugin YAML exists"
             cp plugin.yaml workspace/build/plugin.yaml
