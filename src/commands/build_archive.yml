@@ -36,6 +36,8 @@ steps:
         pip3 install -e cloudify-ecosystem-test
         python -c 'from ecosystem_cicd_tools import packaging; packaging.build_plugins_bundle_with_workspace()'
         python -c 'from ecosystem_cicd_tools import packaging; packaging.build_plugins_bundle_with_workspace(v2_bundle=True)'
+  - run: ecosystem-test create-bundle --workspace build/workspace
+  - run: ecosystem-test create-bundle --workspace build/workspace --plugins-yaml-version v2
   - persist_to_workspace:
       root: workspace
       paths:
