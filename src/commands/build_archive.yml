@@ -32,7 +32,7 @@ steps:
   - run:
       name: install local project
       command: pip install https://github.com/cloudify-incubator/cloudify-ecosystem-test/archive/latest.zip
-  - run: for f in `ls workspace/build`; do md5sum $f > workspace/build/$f.md5; done
+  - run: for f in `ls workspace/build`; do md5sum workspace/build/$f > workspace/build/$f.md5; done
   - run: ecosystem-test generate-plugins-json
   - run: ecosystem-test create-bundle --workspace workspace/build --json-path plugins.json
   - run: cp plugin.yaml workspace/build/
