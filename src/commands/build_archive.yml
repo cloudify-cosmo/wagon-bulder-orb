@@ -32,7 +32,7 @@ steps:
         if [[ -f "v2_plugin.yaml" ]];
         then
             echo "Plugin YAML exists"
-            cp plugin.yaml workspace/build/v2_plugin.yaml
+            cp v2_plugin.yaml workspace/build/v2_plugin.yaml
         else
             echo "Plugin YAML does not exist"
         fi
