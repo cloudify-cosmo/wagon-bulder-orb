@@ -29,6 +29,9 @@ steps:
         else
             echo "Plugin YAML does not exist"
         fi
+  - run:
+      name: install local project
+      command: pip install https://github.com/cloudify-incubator/cloudify-ecosystem-test/archive/latest.zip
   - run: ecosystem-test create-bundle --workspace build/workspace
   - run: ecosystem-test create-bundle --workspace build/workspace --plugins-yaml-version v2
   - persist_to_workspace:
