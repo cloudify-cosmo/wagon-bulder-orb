@@ -35,10 +35,10 @@ steps:
   - run: for f in `ls workspace/build`; do md5sum $f > workspace/build/$f.md5; done
   - run: ecosystem-test generate-plugins-json
   - run: ecosystem-test create-bundle --workspace workspace/build --json-path plugins.json
-  - run: cp plugins.yaml workspace/build/
+  - run: cp plugin.yaml workspace/build/
   - run: ecosystem-test generate-plugins-json --plugins-yaml-version v2
   - run: ecosystem-test create-bundle --workspace workspace/build --plugins-yaml-version v2 --json-path v2_plugins.json
-  - run: cp v2_plugins.yaml workspace/build/
+  - run: cp v2_plugin.yaml workspace/build/
   - persist_to_workspace:
       root: workspace
       paths:
