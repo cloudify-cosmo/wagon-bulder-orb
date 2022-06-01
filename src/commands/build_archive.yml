@@ -10,7 +10,8 @@ steps:
       name: Create Workspace Build directory.
       command: mkdir -p workspace/build
   - run: sudo rm -rf /usr/bin/python
-  - run: sudo ln -s /usr/bin/python3.8 /usr/bin/python  - run:
+  - run: sudo ln -s /usr/bin/python3.8 /usr/bin/python
+  - run:
       name: Check if plugin.yaml exist and if so, copy it to workspace
       command: |
         if [[ -f "plugin.yaml" ]];
