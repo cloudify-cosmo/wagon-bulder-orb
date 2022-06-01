@@ -9,8 +9,8 @@ steps:
   - run:
       name: Create Workspace Build directory.
       command: mkdir -p workspace/build
-  - run: sudo rm -rf /usr/bin/python
-  - run: sudo ln -s /usr/bin/python3.8 /usr/bin/python
+  - run: pyenv install 3.6.5
+  - run: pyenv global 3.6.5
   - run:
       name: Check if plugin.yaml exist and if so, copy it to workspace
       command: |
