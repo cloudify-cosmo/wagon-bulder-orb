@@ -9,8 +9,17 @@ steps:
   - run:
       name: Create Workspace Build directory.
       command: mkdir -p workspace/build
-  - run: pyenv install 3.6.5
-  - run: pyenv global 3.6.5
+  - run:
+      name: Check if Pyenv Installed.
+      command: |
+        if ! pyenv -v COMMAND &> /dev/null
+        then
+            echo "pyenv could not be found"
+            exit
+        else
+            pyenv install 3.6.5
+            pyenv global 3.6.5
+        fi
   - run:
       name: Check if plugin.yaml exist and if so, copy it to workspace
       command: |
