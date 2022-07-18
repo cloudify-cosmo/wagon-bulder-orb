@@ -10,7 +10,6 @@ steps:
   - run:
       name: Build RHEL8 py36 Wagon
       command: |
-          git clone https://github.com/cloudify-cosmo/cloudify-wagon-build-containers.git
           docker build -t cloudify-wagon-builder-redhat8 cloudify-wagon-build-containers/redhat_8_py3 --build-arg USERNAME="$USERNAME" --build-arg PASSWORD="$PASSWORD"
           docker run -v ~/project/:/packaging cloudify-wagon-builder-redhat8
   - run:
