@@ -1,5 +1,5 @@
 description: >
-  This command generates a rhel8 py36 wagon
+  This command generates a rhel 8 py36 wagon
 steps:
   - run:
       name: Git checkout
