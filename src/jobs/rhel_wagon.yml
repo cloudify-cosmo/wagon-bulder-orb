@@ -8,3 +8,4 @@ steps:
   - gh/setup
   - gh/clone
   - generate_rhel_py36_wagon
+  - generate_rhel8_py36_wagon
