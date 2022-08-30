@@ -5,7 +5,7 @@ steps:
       name: Git checkout
       command: git checkout ${CIRCLE_BRANCH}
   - run:
-      name: Add the submodules.
+      name: Add Submodules
       command: git submodule update --init --recursive
   - run:
       name: Create Workspace Build directory.
