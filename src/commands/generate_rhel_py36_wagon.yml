@@ -21,6 +21,12 @@ steps:
   - run:
       name: copy wagon to workspace
       command: cp *.wgn workspace/build/
+  - run:
+      name: copy plugin yamls
+      command: |
+        cp plugin.yaml workspace/build/
+        cp v2_plugin.yaml workspace/build/
+        cp plugin_1_4.yaml workspace/build/
   - persist_to_workspace:
       root: workspace
       paths:
