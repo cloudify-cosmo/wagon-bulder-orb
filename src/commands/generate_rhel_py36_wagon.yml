@@ -24,8 +24,8 @@ steps:
   - run:
       name: copy plugin yamls
       command: |
-        mkdir -p workspace/build
-        cp *plugin*.yaml workspace/build
+        mkdir -p workspace/build/
+        cp *plugin*.yaml workspace/build/
   - persist_to_workspace:
       root: workspace
       paths:
