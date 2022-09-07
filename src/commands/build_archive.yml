@@ -10,6 +10,9 @@ steps:
       name: Create Workspace Build directory.
       command: mkdir -p workspace/build
   - run:
+      name: copy plugin yamls
+      command: cp *plugin*.yaml workspace/build/
+  - run:
       name: Check if Pyenv Installed.
       command: |
         if ! pyenv -v COMMAND &> /dev/null
