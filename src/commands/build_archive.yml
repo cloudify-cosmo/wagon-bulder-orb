@@ -11,7 +11,7 @@ steps:
       command: mkdir -p workspace/build
   - run:
       name: copy plugin yamls
-      command: cp *plugin*.yaml workspace/build/
+      command: cp *plugin*.yaml workspace/build/ || true
   - run:
       name: Check if Pyenv Installed.
       command: |
