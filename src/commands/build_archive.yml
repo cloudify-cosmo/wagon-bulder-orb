@@ -45,9 +45,9 @@ steps:
       command: pip install https://github.com/cloudify-incubator/cloudify-ecosystem-test/archive/latest.zip
   - run: for f in `ls workspace/build`; do md5sum workspace/build/$f > workspace/build/$f.md5; done
   - run: ecosystem-test generate-plugins-json
-  - run: ecosystem-test create-bundle --workspace workspace/build --json-path plugins.json
+  # - run: ecosystem-test create-bundle --workspace workspace/build --json-path plugins.json
   - run: ecosystem-test generate-plugins-json --plugins-yaml-version v2
-  - run: ecosystem-test create-bundle --workspace workspace/build --plugins-yaml-version v2 --json-path v2_plugins.json
+  # - run: ecosystem-test create-bundle --workspace workspace/build --plugins-yaml-version v2 --json-path v2_plugins.json
   - persist_to_workspace:
       root: workspace
       paths:
