@@ -26,20 +26,10 @@ steps:
   - run:
       name: Check if plugin.yaml exist and if so, copy it to workspace
       command: |
-        if [[ -f "plugin.yaml" ]];
-        then
-            echo "Plugin YAML exists"
-            cp plugin.yaml workspace/build/plugin.yaml
-        else
-            echo "Plugin YAML does not exist"
-        fi
-        if [[ -f "v2_plugin.yaml" ]];
-        then
-            echo "Plugin YAML exists"
-            cp v2_plugin.yaml workspace/build/v2_plugin.yaml
-        else
-            echo "Plugin YAML does not exist"
-        fi
+        for f in `find . -maxdepth 1 -name "*plugin*\.yaml"`;
+        do;
+            cp $f workspace/build/$f;
+        done;
   - run:
       name: install local project
       command: pip install https://github.com/cloudify-incubator/cloudify-ecosystem-test/archive/latest.zip
@@ -48,9 +38,7 @@ steps:
   - run: ecosystem-test generate-plugins-json --plugins-yaml-version v2
   - run:
       name: Make sure we have files in ws/b
-      command: |
-        cp plugins.json workspace/build/
-        cp v2_plugins.json workspace/build/
+      command: touch workspace/build/file.txt
   - persist_to_workspace:
       root: workspace
       paths:
