@@ -4,4 +4,4 @@ description: >
   this orb creates wagons for cloudify plugins
 
 orbs:
-  gh: circleci/github-cli@1.1.0
+  gh: circleci/github-cli@2.2.0
