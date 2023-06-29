@@ -14,7 +14,7 @@ steps:
       name: Build py311 Wagon
       command: |
           git clone https://github.com/cloudify-cosmo/cloudify-wagon-build-containers.git
-          docker build -t cloudify-wagon-builder-centos cloudify-wagon-build-containers/centos_7_py311
+          docker build -t python311 cloudify-wagon-build-containers/centos_7_py311
           docker run -v ~/project/:/packaging python311
   - run:
       name: copy wagon to workspace
